@@ -13,7 +13,9 @@ A step-by-step summary of the files to be executed for modeling is shown hereund
     
  2. (Model identification) Run script ModelIdentification.m to estimate subsystems 𝐺1 and 𝐺2 based on previously processed data, and obtain the unified grey-box model 𝐺 in (1) of the PbI2 vaporation process. At the end, the model matrices are saved in ModelOL_G.mat.
     
- 3. (Closed-loop model) The PRG method requires the closed-loop model. Running ModelClosedLoop.m generates the PID state-space model and the final closed-loop model, which is saved in ModelCL_H.mat. The repository also includes OverallSysSim.slx, a block-based Simulink file for the PID control using the open-loop model 𝐺, employed to validate the identified 8th-order closed-loop model that requires the PRG design. Once the process models are obtained, the files that need to be executed for implementing the proposed control methods are the following:
+ 3. (Closed-loop model) The PRG method requires the closed-loop model. Running ModelClosedLoop.m generates the PID state-space model and the final closed-loop model, which is saved in ModelCL_H.mat. The repository also includes OverallSysSim.slx, a block-based Simulink file for the PID control using the open-loop model 𝐺, employed to validate the identified 8th-order closed-loop model that requires the PRG design.
+   
+    Once the process models are obtained, the files that need to be executed for implementing the proposed control methods are the following:
 
  1. (MPC method): The MPC problem is solved in MATLAB using the quadprog solver. You must runMPCalgorithm.m,inwhichthesimulationparameters(simulation length, prediction horizon, sampling time, etc) and the weights of the cost function 𝐽 are defined, to solve the optimal control problem. It also generates a plot with the power input and rate trajectories obtained over the simulation.
     
