@@ -17,7 +17,7 @@ A step-by-step summary of the files to be executed for modeling is shown hereund
    
     Once the process models are obtained, the files that need to be executed for implementing the proposed control methods are the following:
 
- - (MPC method): The MPC problem is solved in MATLAB using the quadprog solver. You must runMPCalgorithm.m,inwhichthesimulationparameters(simulation length, prediction horizon, sampling time, etc) and the weights of the cost function 𝐽 are defined, to solve the optimal control problem. It also generates a plot with the power input and rate trajectories obtained over the simulation.
+ - (MPC method): The MPC problem is solved in MATLAB using the quadprog solver.You must runMPCalgorithm.m, in which the simulation parameters(simulation length, prediction horizon, sampling time, etc) and the weights of the cost function 𝐽 are defined, to solve the optimal control problem. It also generates a plot with the power input and rate trajectories obtained over the simulation.
     
  - (PRG method): The PRG approach is implemented in MATLAB using the CasADI toolbox with the ipopt solver. This approach considers the closed loop dynamics stored in ModelCL_H.mat and the full closed-loop state of the process, whichcanbeestimatedviathestateobserver in ComputeGainObs.m. The PRG problem is implemented and solved in PRGalgorithm.m, which also generates graphical results for the rate, temperature, and virtual rate reference throughout the simulation.
     
