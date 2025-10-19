@@ -9,9 +9,9 @@ To run the benchmark, it is necessary to install MATLAB® R2021b (or later versi
 
 
 A step-by-step summary of the files to be executed for modeling is shown hereunder:
-1. (Data preprocessing) The model (1) for thermal evaporation dynamics of a material is identified based on experimental data using the MATLAB System Identification Toolbox. The script readingDataPbI2.m  is provided in the repository to first load and prepare the PbI2 datasets. Next, you have to run ModelTraining.m to proceed with the identification process, where the datasets are divided into training and validation subsets.
+1. (Data preprocessing): The thermal evaporation dynamics of the source material is identified as a 4-th order state-space model based on exerimental data using the MATLAB System Identification Toolbox. The script readingDataPbI2.m  is provided in the repository to first load and prepare the PbI2 datasets. Next, you have to run ModelTraining.m to proceed with the identification process, where the datasets are divided into training and validation subsets.
     
- 2. (Model identification) Run script ModelIdentification.m to estimate subsystems 𝐺1 and 𝐺2 based on previously processed data, and obtain the unified grey-box model 𝐺 in (1) of the PbI2 vaporation process. At the end, the model matrices are saved in ModelOL_G.mat.
+ 2. (Model identification): Run script ModelIdentification.m to estimate subsystems 𝐺1 and 𝐺2 based on previously processed data, and obtain the unified grey-box model 𝐺 of the PbI2 vaporation process. At the end, the model matrices are saved in ModelOL_G.mat.
     
  3. (Closed-loop model) The PRG method requires the closed-loop model. Running ModelClosedLoop.m generates the PID state-space model and the final closed-loop model, which is saved in ModelCL_H.mat. The repository also includes OverallSysSim.slx, a block-based Simulink file for the PID control using the open-loop model 𝐺, employed to validate the identified 8th-order closed-loop model that requires the PRG design.
    
